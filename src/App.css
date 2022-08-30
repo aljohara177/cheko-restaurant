@@ -1,38 +1,121 @@
+@import '~antd/dist/antd.css';
 .App {
-  text-align: center;
+    background-color: #F5F6F8;
+    height: 100%;
+    width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    position: relative;
+    font-size: 30px;
+    z-index: 1;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1:before,
+h1:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    background-color: red;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.marker {
+    background-image: url('assets/icons/location.svg');
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    height: 156px;
+    width: 322px;
+    right: 35px;
+    border-radius: 8px !important;
+}
+
+.info-container {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    text-align: start;
+    padding: 0 8px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 18px;
+}
+
+span {
+    color: rgb(29, 28, 29, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tooltip-img {
+    border-radius: 15px;
+}
+
+.mapboxgl-popup-close-button {
+    display: none;
+}
+
+.arrow {
+    background-color: #F4CBDF;
+    width: 40px;
+    height: 39px;
+    border-radius: 10px;
+    font-size: 23px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-align: center;
+    color: #000000;
+}
+
+.row {
+    width: 100%;
+}
+
+.ant-modal-wrap {
+    z-index: 99999 !important;
+}
+
+@media screen and (max-width: 480px) {
+    .ant-input {
+        max-width: 150px;
+        width: 100px;
+    }
 }
